@@ -45,3 +45,13 @@ public final class Number {
 #endif
 
 }
+
+#if os(Linux)
+    func arc4random() {
+        return Int(random() % (max + 1))
+    }
+    
+    func arc4random_uniform() {
+        return Int(random() % (max + 1))
+    }
+#endif
