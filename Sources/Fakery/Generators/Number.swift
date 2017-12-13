@@ -37,8 +37,11 @@ public final class Number {
     return (Double(arc4random()) / Double(UInt32.max)) * (max - min) + min
   }
 
+#if !os(Linux)
   public func increasingUniqueId() -> Int {
     OSAtomicIncrement64(&lastUsedId)
     return Int(lastUsedId)
   }
+#endif
+
 }
