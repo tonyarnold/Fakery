@@ -66,7 +66,7 @@ public final class Parser {
 
   func parse(_ template: String, forSubject subject: String) -> String {
     var text = ""
-    let string = template as NSString
+    let string = NSString(string: template)
     var regex: NSRegularExpression
 
     do {
