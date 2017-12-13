@@ -17,7 +17,7 @@ public final class Number {
 #if !os(Linux)
     arc4random_buf(&i, MemoryLayout.size(ofValue: i))
 #else
-    i = arc4random()
+    i = Int(arc4random())
 #endif
     
     i = i & Int.max // Make the number positive
