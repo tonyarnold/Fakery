@@ -72,7 +72,7 @@ public final class Parser {
     do {
       try regex = NSRegularExpression(pattern: "(\\(?)#\\{([A-Za-z]+\\.)?([^\\}]+)\\}([^#]+)?",
                                       options: .caseInsensitive)
-      let matches = regex.matches(in: String(string),
+        let matches = regex.matches(in: String(describing: string),
         options: .reportCompletion,
         range: NSRange(location: 0, length: string.length))
 
