@@ -40,4 +40,21 @@ public final class Faker {
     number = Number()
     bank = Bank(parser: parser)
   }
+    
+    public init(fromPath path: String) throws {
+        self.locale = Config.defaultLocale
+        parser = try Parser(fromPath: path)
+        address = Address(parser: parser)
+        app = App(parser: parser)
+        business = Business(parser: parser)
+        company = Company(parser: parser)
+        commerce = Commerce(parser: parser)
+        internet = Internet(parser: parser)
+        lorem = Lorem(parser: parser)
+        name = Name(parser: parser)
+        phoneNumber = PhoneNumber(parser: parser)
+        team = Team(parser: parser)
+        number = Number()
+        bank = Bank(parser: parser)
+    }
 }

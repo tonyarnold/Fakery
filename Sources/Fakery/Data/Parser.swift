@@ -23,6 +23,12 @@ public final class Parser {
       loadData(forLocale: Config.defaultLocale)
     }
   }
+    
+    public init(fromPath path: String) throws {
+        self.locale = Config.defaultLocale
+        provider = Provider()
+        try self.loadData(path: path)
+    }
 
   // MARK: - Parsing
 
@@ -154,4 +160,16 @@ public final class Parser {
 
     data[locale] = localeJson
   }
+    
+    private func loadData(path: String) throws {
+        let url = URL(fileURLWithPath: path)
+        let jsonDataFromRaw = try Data(contentsOf: url)
+        let parsedData = try? JSONSerialization.jsonObject(with: jsonDataFromRaw, options: .allowFragments)
+        guard let json = parsedData as? [String: Any] else {
+            print("JSON could not be parsed.")
+            return
+        }
+        let localeJson = json[locale]
+        data[locale] = localeJson
+    }
 }
