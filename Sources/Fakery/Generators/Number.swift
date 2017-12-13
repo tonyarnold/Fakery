@@ -47,23 +47,23 @@ public final class Number {
 }
 
 #if os(Linux)
-    public func arc4random(_ max: UInt32) -> Int32 {
+    public func arc4random(_ max: UInt32) -> UInt32 {
         print("random")
-        return Int32(random() % Int32(max-1))
+        return UInt32(random() % Int32(max-1))
     }
     
-    public func arc4random() -> Int32 {
+    public func arc4random() -> UInt32 {
         print("random")
-        return Int32(random() % Int32(1))
+        return UInt32(random() % Int32(1))
     }
     
-    public func arc4random_uniform(_ max: UInt32) -> Int32 {
+    public func arc4random_uniform(_ max: UInt32) -> UInt32 {
         print("random_uniform")
-        return Int32(random() % Int32(max-1))
+        return UInt32(random() % Int32(max-1))
     }
     
-    public func arc4random_uniform() -> Int32 {
+    public func arc4random_uniform() -> UInt32 {
         print("random_uniform")
-        return Int32(random() % Int32(max-1))
+        return UInt32(random() % Int32(max-1))
     }
 #endif
