@@ -54,18 +54,22 @@ public final class Number {
 
 #if os(Linux)
     public func arc4random(_ max: UInt32) -> UInt32 {
+        srand(UInt32(time(nil)))
         return UInt32(random() % Int(max-1))
     }
     
     public func arc4random() -> UInt32 {
+        srand(UInt32(time(nil)))
         return UInt32(random() % Int(1))
     }
     
     public func arc4random_uniform(_ max: UInt32) -> UInt32 {
+        srand(UInt32(time(nil)))
         return UInt32(random() % Int(max-1))
     }
     
     public func arc4random_uniform() -> UInt32 {
+        srand(UInt32(time(nil)))
         return UInt32(random() % Int(1))
     }
 #endif
