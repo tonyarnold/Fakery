@@ -9,7 +9,7 @@ public final class Provider {
         if let translationData = translations[locale] {
             translation = translationData
         } else {
-            let bundle = Bundle.module
+            let bundle = Bundle.package
             let path = bundle.path(
                 forResource: locale,
                 ofType: Config.pathExtension,
