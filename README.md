@@ -211,14 +211,9 @@ samplePack.bank.bban() //=> ABNA0136468471
 .package(url: "https://github.com/tonyarnold/SamplePack.git", .branch("main"))
 ```
 
-
-## Contributing
-
-Please see our [playbook](https://github.com/hyperoslo/playbook/blob/master/GIT_AND_GITHUB.md) for guidelines on contributing.
-
 ## Author
 
-Vadym Markov, markov.vadym@gmail.com
+Original author of Fakery: Vadym Markov, markov.vadym@gmail.com
 
 ## License
 
