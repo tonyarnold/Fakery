@@ -214,12 +214,12 @@ faker.bank.bban() //=> ABNA0136468471
 
 ## Installation
 
-**Fakery** is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+**Fakery** is available through [Swift Package Manager](https://www.swift.org/documentation/package-manager/). To install using Swift Package Manager, add this to the `dependencies:` section in your Package.swift file:
 
-```ruby
-pod 'Fakery'
+```swift
+.package(url: "https://github.com/tonyarnold/Fakery.git", .branch("main"))
 ```
+
 
 ## Contributing
 

@@ -1,6 +1,5 @@
-public struct Config {
-  public static let defaultLocale: String = "en"
-  public static let pathExtension: String = "json"
-  public static var dirPath: String = "Resources/Locales"
-  public static var dirFrameworkPath: String = ""
+public enum Config {
+    public static let defaultLocale = "en"
+    public static let pathExtension = "json"
+    public static var dirPath = "Locales"
 }
