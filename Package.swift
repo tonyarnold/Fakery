@@ -7,7 +7,7 @@ var swiftSettings: [SwiftSetting] = [
 ]
 
 let package = Package(
-    name: "Fakery",
+    name: "SamplePack",
     platforms: [
         .iOS(.v16),
         .macOS(.v13),
@@ -18,22 +18,22 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Fakery",
-            targets: ["Fakery"]
+            name: "SamplePack",
+            targets: ["SamplePack"]
         )
     ],
     targets: [
         .target(
-            name: "Fakery",
+            name: "SamplePack",
             resources: [
                 .copy("Resources/Locales")
             ],
             swiftSettings: swiftSettings
         ),
         .testTarget(
-            name: "FakeryTests",
+            name: "SamplePackTests",
             dependencies: [
-                .target(name: "Fakery")
+                .target(name: "SamplePack")
             ],
             swiftSettings: swiftSettings
         )

@@ -1,5 +1,5 @@
 import XCTest
-@testable import Fakery
+@testable import SamplePack
 
 final class ParserTests: XCTestCase {
     let parser = Parser(locale: "en-TEST")

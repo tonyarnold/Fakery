@@ -1,4 +1,4 @@
-public final class Faker {
+public final class SamplePack {
     // MARK: - Initialization
 
     public init(locale: String = Config.defaultLocale) {
