@@ -1,5 +1,5 @@
 import XCTest
-@testable import SamplePack
+@testable import Mockery
 
 final class GeneratorTests: XCTestCase {
     var generator: Generator!

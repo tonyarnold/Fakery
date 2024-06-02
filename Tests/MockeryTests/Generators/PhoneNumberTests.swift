@@ -1,5 +1,5 @@
 import XCTest
-@testable import SamplePack
+@testable import Mockery
 
 final class PhoneNumberTests: XCTestCase {
     var phoneNumber: PhoneNumber!

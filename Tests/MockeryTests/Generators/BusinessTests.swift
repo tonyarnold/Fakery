@@ -1,5 +1,5 @@
 import XCTest
-@testable import SamplePack
+@testable import Mockery
 
 final class BusinessTest: XCTestCase {
     var business: Business!

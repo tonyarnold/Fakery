@@ -1,5 +1,5 @@
 import XCTest
-@testable import SamplePack
+@testable import Mockery
 
 final class InternetTests: XCTestCase {
     let emailFormat = /[\w._%+-]+@[\w.-]+\.\w{2,}/

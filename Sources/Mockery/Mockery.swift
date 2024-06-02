@@ -1,4 +1,4 @@
-public final class SamplePack {
+public final class Mockery {
     // MARK: - Initialization
 
     public init(locale: String = Config.defaultLocale) {

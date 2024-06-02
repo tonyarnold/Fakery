@@ -1,5 +1,5 @@
 import XCTest
-@testable import SamplePack
+@testable import Mockery
 
 final class AddressTests: XCTestCase {
     var address: Address!

@@ -3,7 +3,7 @@ import Foundation
 public extension Bundle {
     private class BundleFinder {}
 
-    private static let packageBundleName = "SamplePack_SamplePack"
+    private static let packageBundleName = "Mockery_Mockery"
 
     static let package: Bundle = {
         let bundleNameIOS = packageBundleName

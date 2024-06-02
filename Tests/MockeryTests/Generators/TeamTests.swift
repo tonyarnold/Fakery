@@ -1,5 +1,5 @@
 import XCTest
-@testable import SamplePack
+@testable import Mockery
 
 final class TeamTests: XCTestCase {
     var team: Team!
