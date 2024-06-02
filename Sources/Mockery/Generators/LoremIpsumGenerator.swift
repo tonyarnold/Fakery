@@ -1,8 +1,8 @@
 import Foundation
 
-public final class Lorem: Generator {
+public final class LoremIpsumGenerator: Generator {
     public func word() -> String {
-        return generate("lorem.words")
+        return generate("lorem_ipsum.words")
     }
 
     public func words(amount: Int = 3) -> String {

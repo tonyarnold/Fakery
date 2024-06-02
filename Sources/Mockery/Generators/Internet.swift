@@ -2,7 +2,7 @@ import Foundation
 
 public final class Internet: Generator {
     public required init(parser: Parser) {
-        self.lorem = Lorem(parser: parser)
+        self.lorem = LoremIpsumGenerator(parser: parser)
         super.init(parser: parser)
     }
 
@@ -117,5 +117,5 @@ public final class Internet: Generator {
     }
 
     /// @ToDo - slug
-    private let lorem: Lorem
+    private let lorem: LoremIpsumGenerator
 }

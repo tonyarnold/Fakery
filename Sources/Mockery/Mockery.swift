@@ -10,7 +10,7 @@ public final class Mockery {
         company = Company(parser: parser)
         commerce = Commerce(parser: parser)
         internet = Internet(parser: parser)
-        lorem = Lorem(parser: parser)
+        loremIpsum = LoremIpsumGenerator(parser: parser)
         name = Name(parser: parser)
         phoneNumber = PhoneNumber(parser: parser)
         team = Team(parser: parser)
@@ -24,7 +24,7 @@ public final class Mockery {
     public let company: Company
     public let commerce: Commerce
     public let internet: Internet
-    public let lorem: Lorem
+    public let loremIpsum: LoremIpsumGenerator
     public let name: Name
     public let phoneNumber: PhoneNumber
     public let team: Team
