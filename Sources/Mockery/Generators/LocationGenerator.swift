@@ -1,21 +1,21 @@
 import CoreLocation
 import Foundation
 
-public final class Address: Generator {
+public final class LocationGenerator: Generator {
     public func city() -> String {
-        return generate("address.city")
+        return generate("location.city")
     }
 
     public func streetName() -> String {
-        return generate("address.street_name")
+        return generate("location.street_name")
     }
 
     public func secondaryAddress() -> String {
-        return numerify(generate("address.secondary_address"))
+        return numerify(generate("location.secondary_address"))
     }
 
     public func streetAddress(includeSecondary: Bool = false) -> String {
-        var streetAddress = numerify(generate("address.street_address"))
+        var streetAddress = numerify(generate("location.street_address"))
 
         if includeSecondary {
             streetAddress += " " + secondaryAddress()
@@ -25,51 +25,51 @@ public final class Address: Generator {
     }
 
     public func buildingNumber() -> String {
-        return bothify(generate("address.building_number"))
+        return bothify(generate("location.building_number"))
     }
 
     public func postcode(stateAbbreviation: String = "") -> String {
         if stateAbbreviation.isEmpty {
-            return bothify(generate("address.postcode"))
+            return bothify(generate("location.postcode"))
         }
 
-        return bothify(generate("address.postcode_by_state.\(stateAbbreviation)"))
+        return bothify(generate("location.postcode_by_state.\(stateAbbreviation)"))
     }
 
     public func timeZone() -> String {
-        return generate("address.time_zone")
+        return generate("location.time_zone")
     }
 
     public func streetSuffix() -> String {
-        return generate("address.street_suffix")
+        return generate("location.street_suffix")
     }
 
     public func citySuffix() -> String {
-        return generate("address.city_suffix")
+        return generate("location.city_suffix")
     }
 
     public func cityPrefix() -> String {
-        return generate("address.city_prefix")
+        return generate("location.city_prefix")
     }
 
     public func stateAbbreviation() -> String {
-        return generate("address.state_abbr")
+        return generate("location.state_abbr")
     }
 
     public func state() -> String {
-        return generate("address.state")
+        return generate("location.state")
     }
 
     public func county() -> String {
-        return generate("address.county")
+        return generate("location.county")
     }
 
     public func country() -> String {
-        return generate("address.country")
+        return generate("location.country")
     }
 
     public func countryCode() -> String {
-        return generate("address.country_code")
+        return generate("location.country_code")
     }
 
     public func latitude() -> Double {

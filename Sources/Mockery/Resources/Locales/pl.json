@@ -1222,7 +1222,7 @@
       "#{first_name} #{last_name}"
     ]
   },
-  "address": {
+  "location": {
     "country": [
       "Afganistan",
       "Albania",

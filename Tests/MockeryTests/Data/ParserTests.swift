@@ -10,7 +10,7 @@ final class ParserTests: XCTestCase {
     }
 
     func testParsingFetchWhenKeyIsCorrect() {
-        let city = parser.fetch("address.city")
+        let city = parser.fetch("location.city")
         XCTAssertEqual(city, "North Vadymtown")
 
         let name = parser.fetch("name.name")
@@ -26,14 +26,14 @@ final class ParserTests: XCTestCase {
     }
 
     func testFetchRawWhenTheKeyIsCorrect() throws {
-        let city = try XCTUnwrap((parser.fetchRaw("address.city") as? [String])?.first)
+        let city = try XCTUnwrap((parser.fetchRaw("location.city") as? [String])?.first)
         XCTAssertEqual(city, "#{city_prefix} #{Name.first_name}#{city_suffix}")
 
         let name = try XCTUnwrap((parser.fetchRaw("name.name") as? [String])?.first)
         XCTAssertEqual(name, "#{prefix} #{first_name} #{last_name}")
 
         let team = try XCTUnwrap((parser.fetchRaw("team.name") as? [String])?.first)
-        XCTAssertEqual(team, "#{Address.state} #{creature}")
+        XCTAssertEqual(team, "#{Location.state} #{creature}")
     }
 
     func testFetchRawWhenTheKeyIsIncorrectReturnsEmptyText() throws {
@@ -41,7 +41,7 @@ final class ParserTests: XCTestCase {
     }
 
     func testParseForSubjectWhenTheSubjectIsCorrect() {
-        let text = parser.parse("#{Name.first_name} #{street_suffix} Test", forSubject: "address")
+        let text = parser.parse("#{Name.first_name} #{street_suffix} Test", forSubject: "location")
         XCTAssertEqual(text, "Vadym Avenue Test")
     }
 
@@ -49,7 +49,7 @@ final class ParserTests: XCTestCase {
         let text = parser.parse("test", forSubject: "test")
         XCTAssertEqual(text, "test")
 
-        let text1 = parser.parse("test", forSubject: "address")
+        let text1 = parser.parse("test", forSubject: "location")
         XCTAssertEqual(text1, "test")
     }
 }

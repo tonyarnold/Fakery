@@ -4,7 +4,7 @@ public final class Mockery {
     public init(locale: String = Config.defaultLocale) {
         self.locale = locale
         parser = Parser(locale: self.locale)
-        address = Address(parser: parser)
+        location = LocationGenerator(parser: parser)
         app = App(parser: parser)
         business = Business(parser: parser)
         company = Company(parser: parser)
@@ -18,7 +18,7 @@ public final class Mockery {
         bank = Bank(parser: parser)
     }
 
-    public let address: Address
+    public let location: LocationGenerator
     public let app: App
     public let business: Business
     public let company: Company

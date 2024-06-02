@@ -1,6 +1,6 @@
 {
   "separator": " & ",
-  "address": {
+  "location": {
     "city_prefix": [
       "North"
     ],
@@ -217,7 +217,7 @@
       "owls"
     ],
     "name": [
-      "#{Address.state} #{creature}"
+      "#{Location.state} #{creature}"
     ]
   },
   "hacker": {
