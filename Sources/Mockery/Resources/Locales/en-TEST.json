@@ -1,6 +1,6 @@
 {
   "separator": " & ",
-  "address": {
+  "location": {
     "city_prefix": [
       "North"
     ],
@@ -28,9 +28,6 @@
     "postcode": [
       "#####-####"
     ],
-    "postcode_by_state": {
-      "CA": "900##"
-    },
     "state": [
       "California"
     ],
@@ -128,7 +125,7 @@
       "#art"
     ]
   },
-  "lorem": {
+  "lorem_ipsum": {
     "words": [
       "alias"
     ],
@@ -217,7 +214,7 @@
       "owls"
     ],
     "name": [
-      "#{Address.state} #{creature}"
+      "#{Location.state} #{creature}"
     ]
   },
   "hacker": {

@@ -1,6 +1,6 @@
 {
   "separator": " & ",
-  "address": {
+  "location": {
     "city_prefix": [
       "North",
       "East",
@@ -767,10 +767,6 @@
       "Suite ###"
     ],
     "postcode": [
-      "#####",
-      "#####-####"
-    ],
-    "postcode_by_state": [
       "#####",
       "#####-####"
     ],
@@ -4739,7 +4735,7 @@
       "#fitness"
     ]
   },
-  "lorem": {
+  "lorem_ipsum": {
     "words": [
       "alias",
       "consequatur",

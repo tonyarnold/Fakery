@@ -1,81 +1,81 @@
 import XCTest
 @testable import Mockery
 
-final class LoremTests: XCTestCase {
-    var lorem: Lorem!
+final class LoremIpsumTests: XCTestCase {
+    var loremIpsum: LoremIpsumGenerator!
 
     override func setUp() {
         let parser = Parser(locale: "en-TEST")
-        lorem = Lorem(parser: parser)
+        loremIpsum = LoremIpsumGenerator(parser: parser)
     }
 
     func testWord() throws {
-        let word = lorem.word()
+        let word = loremIpsum.word()
         XCTAssertTrue(word.contains(/^[A-Za-z]+$/))
     }
 
     func testWords() throws {
-        let word = lorem.words()
+        let word = loremIpsum.words()
         XCTAssertTrue(word.contains(/^[A-Za-z]+ [A-Za-z]+ [A-Za-z]+$/))
     }
 
     func testWordsAmount() throws {
-        let word = lorem.words(amount: 2)
+        let word = loremIpsum.words(count: 2)
         XCTAssertTrue(word.contains(/^[A-Za-z]+ [A-Za-z]+$/))
     }
 
     func testCharacter() throws {
-        let char = lorem.character()
+        let char = loremIpsum.character()
         XCTAssertTrue(char.contains(/^[A-Za-z]$/))
     }
 
     func testCharacters() throws {
-        let chars = lorem.characters()
+        let chars = loremIpsum.characters()
         XCTAssertTrue(chars.contains(/^[A-Za-z]{255}/))
     }
 
     func testCharactersAmount() throws {
-        let chars = lorem.characters(amount: 7)
+        let chars = loremIpsum.characters(count: 7)
         XCTAssertTrue(chars.contains(/^[A-Za-z]{7}/))
     }
 
     func testSentence() throws {
-        let sentence = lorem.sentence()
+        let sentence = loremIpsum.sentence()
         XCTAssertTrue(sentence.contains(/^[A-Z][A-Za-z]+ [A-Za-z]+ [A-Za-z]+ [A-Za-z]+.$/))
     }
 
     func testSentenceAmount() throws {
-        let sentence = lorem.sentence(wordsAmount: 2)
+        let sentence = loremIpsum.sentence(wordCount: 2)
         XCTAssertTrue(sentence.contains(/^[A-Z][A-Za-z]+ [A-Za-z]+.$/))
     }
 
     func testSentences() throws {
-        let sentences = lorem.sentences()
+        let sentences = loremIpsum.sentences()
         XCTAssertTrue(sentences.contains(/^[A-Za-z ]+. [A-Za-z ]+. [A-Za-z ]+.$/))
     }
 
     func testSentencesAmount() throws {
-        let sentences = lorem.sentences(amount: 2)
+        let sentences = loremIpsum.sentences(count: 2)
         XCTAssertTrue(sentences.contains(/^[A-Za-z ]+. [A-Za-z ]+.$/))
     }
 
     func testParagraph() throws {
-        let paragraph = lorem.paragraph()
+        let paragraph = loremIpsum.paragraph()
         XCTAssertTrue(paragraph.contains(/^[A-Za-z ]+. [A-Za-z ]+. [A-Za-z ]+.$/))
     }
 
     func testParagraphAmount() throws {
-        let paragraph = lorem.paragraph(sentencesAmount: 2)
+        let paragraph = loremIpsum.paragraph(sentenceCount: 2)
         XCTAssertTrue(paragraph.contains(/^[A-Za-z ]+. [A-Za-z ]+.$/))
     }
 
     func testParagraphs() throws {
-        let paragraphs = lorem.paragraphs()
+        let paragraphs = loremIpsum.paragraphs()
         XCTAssertTrue(paragraphs.contains(/^[A-Za-z .]+\n[A-Za-z .]+\n[A-Za-z .]+$/))
     }
 
     func testParagraphsAmount() throws {
-        let paragraphs = lorem.paragraphs(amount: 2)
+        let paragraphs = loremIpsum.paragraphs(count: 2)
         XCTAssertTrue(paragraphs.contains(/^[A-Za-z .]+\n[A-Za-z .]+$/))
     }
 }

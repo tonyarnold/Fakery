@@ -8,6 +8,6 @@ public final class Team: Generator {
     }
 
     public func state() -> String {
-        return generate("address.state").capitalized
+        return generate("location.state").capitalized
     }
 }

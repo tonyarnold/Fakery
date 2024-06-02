@@ -1,5 +1,5 @@
 {
-  "address": {
+  "location": {
     "country": [
       "Afghanistan",
       "Afrique du Sud",
@@ -1369,7 +1369,7 @@
       "bzh"
     ]
   },
-  "lorem": {
+  "lorem_ipsum": {
     "words": [
       "alias",
       "consequatur",

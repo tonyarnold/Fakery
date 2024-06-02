@@ -1,5 +1,5 @@
 {
-  "address": {
+  "location": {
     "city_prefix": [
       "North",
       "East",
@@ -2347,7 +2347,7 @@
       "org"
     ]
   },
-  "lorem": {
+  "lorem_ipsum": {
     "words": [
       "alias",
       "consequatur",

@@ -1,111 +1,101 @@
 import XCTest
 @testable import Mockery
 
-final class AddressTests: XCTestCase {
-    var address: Address!
+final class LocationGeneratorTests: XCTestCase {
+    var location: LocationGenerator!
 
     override func setUp() {
         let parser = Parser(locale: "en-TEST")
-        address = Address(parser: parser)
+        location = LocationGenerator(parser: parser)
     }
 
     func testCity() {
-        let city = address.city()
+        let city = location.city()
         XCTAssertEqual(city, "North Vadymtown")
     }
 
-    func testStreetName() {
-        let city = address.streetName()
+    func testStreet() {
+        let city = location.street()
         XCTAssertEqual(city, "Vadym Avenue")
     }
 
     func testSecondaryAddress() throws {
-        let city = address.secondaryAddress()
+        let city = location.secondaryAddress()
         XCTAssertTrue(city.contains(/^Apt. \d{3}$/))
     }
 
     func testStreetAddressWithoutSecondary() throws {
-        let streetAddress = address.streetAddress()
+        let streetAddress = location.streetAddress()
         XCTAssertTrue(streetAddress.contains(/^\d{5} Vadym Avenue$/))
     }
 
     func testStreetAddressIncludingSecondary() throws {
-        let streetAddress = address.streetAddress(includeSecondary: true)
+        let streetAddress = location.streetAddress(includeSecondary: true)
         XCTAssertTrue(streetAddress.contains(/^\d{5} Vadym Avenue Apt. \d{3}$/))
     }
 
     func testBuildingNumber() throws {
-        let buildingNumber = address.buildingNumber()
+        let buildingNumber = location.buildingNumber()
         XCTAssertTrue(buildingNumber.contains(/^\d{5}$/))
     }
 
-    func testPostCodeWithoutStateAbbreviation() throws {
-        let postcode = address.postcode()
+    func testPostCode() throws {
+        let postcode = location.postcode()
         XCTAssertTrue(postcode.contains(/^\d{5}-\d{4}$/))
     }
 
-    func testPostCodeWithStateAbbreviation() throws {
-        let postcode = address.postcode(stateAbbreviation: "CA")
-        XCTAssertTrue(postcode.contains(/^900\d{2}$/))
-    }
-
-    func testPostCodeWithWrongStateAbbreviation() {
-        let postcode = address.postcode(stateAbbreviation: "TE")
-        XCTAssertTrue(postcode.isEmpty)
-    }
-
     func testTimeZone() {
-        let timeZone = address.timeZone()
+        let timeZone = location.timeZone()
         XCTAssertEqual(timeZone, "America/Los_Angeles")
     }
 
     func testStreetSuffix() {
-        let streetSuffix = address.streetSuffix()
+        let streetSuffix = location.streetSuffix()
         XCTAssertEqual(streetSuffix, "Avenue")
     }
 
     func testCitySuffix() {
-        let citySuffix = address.citySuffix()
+        let citySuffix = location.citySuffix()
         XCTAssertEqual(citySuffix, "town")
     }
 
     func testCityPrefix() {
-        let cityPrefix = address.cityPrefix()
+        let cityPrefix = location.cityPrefix()
         XCTAssertEqual(cityPrefix, "North")
     }
 
-    func testStateAbbreviation() {
-        let stateAbbreviation = address.stateAbbreviation()
+    func testAbbreviatedState() {
+        let stateAbbreviation = location.state(abbreviated: true)
         XCTAssertEqual(stateAbbreviation, "CA")
     }
 
     func testState() {
-        let state = address.state()
+        let state = location.state(abbreviated: false)
         XCTAssertEqual(state, "California")
     }
 
     func testCounty() {
-        let county = address.county()
+        let county = location.county()
         XCTAssertEqual(county, "Autauga County")
     }
 
     func testCountry() {
-        let country = address.country()
+        let country = location.country()
         XCTAssertEqual(country, "United States of America")
     }
 
     func testCountryCode() {
-        let countryCode = address.countryCode()
+        let countryCode = location.countryCode()
         XCTAssertEqual(countryCode, "US")
     }
 
     func testLatitude() {
-        let latitude = address.latitude()
+        let latitude = location.latitude()
         XCTAssertNotEqual(latitude, 0)
     }
 
     func testLongitude() {
-        let longitude = address.longitude()
+        let longitude = location.longitude()
         XCTAssertNotEqual(longitude, 0)
     }
 }

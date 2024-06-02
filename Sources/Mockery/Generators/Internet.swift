@@ -2,7 +2,7 @@ import Foundation
 
 public final class Internet: Generator {
     public required init(parser: Parser) {
-        self.lorem = Lorem(parser: parser)
+        self.lorem = LoremIpsumGenerator(parser: parser)
         super.init(parser: parser)
     }
 
@@ -66,12 +66,12 @@ public final class Internet: Generator {
     }
 
     public func password(minimumLength: Int = 8, maximumLength: Int = 16) -> String {
-        var temp = lorem.characters(amount: minimumLength)
+        var temp = lorem.characters(count: minimumLength)
         let diffLength = maximumLength - minimumLength
 
         if diffLength > 0 {
             let diffRandom = Int(arc4random_uniform(UInt32(diffLength + 1)))
-            temp += lorem.characters(amount: diffRandom)
+            temp += lorem.characters(count: diffRandom)
         }
 
         return temp
@@ -117,5 +117,5 @@ public final class Internet: Generator {
     }
 
     /// @ToDo - slug
-    private let lorem: Lorem
+    private let lorem: LoremIpsumGenerator
 }

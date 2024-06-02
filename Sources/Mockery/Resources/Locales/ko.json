@@ -1,5 +1,5 @@
 {
-  "address": {
+  "location": {
     "postcode": [
       "###-###"
     ],
@@ -161,7 +161,7 @@
       "org"
     ]
   },
-  "lorem": {
+  "lorem_ipsum": {
     "words": [
       "국가는",
       "법률이",
