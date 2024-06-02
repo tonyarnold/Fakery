@@ -20,7 +20,7 @@ final class LoremIpsumTests: XCTestCase {
     }
 
     func testWordsAmount() throws {
-        let word = loremIpsum.words(amount: 2)
+        let word = loremIpsum.words(count: 2)
         XCTAssertTrue(word.contains(/^[A-Za-z]+ [A-Za-z]+$/))
     }
 
@@ -35,7 +35,7 @@ final class LoremIpsumTests: XCTestCase {
     }
 
     func testCharactersAmount() throws {
-        let chars = loremIpsum.characters(amount: 7)
+        let chars = loremIpsum.characters(count: 7)
         XCTAssertTrue(chars.contains(/^[A-Za-z]{7}/))
     }
 
@@ -45,7 +45,7 @@ final class LoremIpsumTests: XCTestCase {
     }
 
     func testSentenceAmount() throws {
-        let sentence = loremIpsum.sentence(wordsAmount: 2)
+        let sentence = loremIpsum.sentence(wordCount: 2)
         XCTAssertTrue(sentence.contains(/^[A-Z][A-Za-z]+ [A-Za-z]+.$/))
     }
 
@@ -55,7 +55,7 @@ final class LoremIpsumTests: XCTestCase {
     }
 
     func testSentencesAmount() throws {
-        let sentences = loremIpsum.sentences(amount: 2)
+        let sentences = loremIpsum.sentences(count: 2)
         XCTAssertTrue(sentences.contains(/^[A-Za-z ]+. [A-Za-z ]+.$/))
     }
 
@@ -65,7 +65,7 @@ final class LoremIpsumTests: XCTestCase {
     }
 
     func testParagraphAmount() throws {
-        let paragraph = loremIpsum.paragraph(sentencesAmount: 2)
+        let paragraph = loremIpsum.paragraph(sentenceCount: 2)
         XCTAssertTrue(paragraph.contains(/^[A-Za-z ]+. [A-Za-z ]+.$/))
     }
 
@@ -75,7 +75,7 @@ final class LoremIpsumTests: XCTestCase {
     }
 
     func testParagraphsAmount() throws {
-        let paragraphs = loremIpsum.paragraphs(amount: 2)
+        let paragraphs = loremIpsum.paragraphs(count: 2)
         XCTAssertTrue(paragraphs.contains(/^[A-Za-z .]+\n[A-Za-z .]+$/))
     }
 }
