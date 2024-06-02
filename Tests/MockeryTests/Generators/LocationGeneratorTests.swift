@@ -14,8 +14,8 @@ final class LocationGeneratorTests: XCTestCase {
         XCTAssertEqual(city, "North Vadymtown")
     }
 
-    func testStreetName() {
-        let city = location.streetName()
+    func testStreet() {
+        let city = location.street()
         XCTAssertEqual(city, "Vadym Avenue")
     }
 
@@ -39,19 +39,9 @@ final class LocationGeneratorTests: XCTestCase {
         XCTAssertTrue(buildingNumber.contains(/^\d{5}$/))
     }
 
-    func testPostCodeWithoutStateAbbreviation() throws {
+    func testPostCode() throws {
         let postcode = location.postcode()
         XCTAssertTrue(postcode.contains(/^\d{5}-\d{4}$/))
-    }
-
-    func testPostCodeWithStateAbbreviation() throws {
-        let postcode = location.postcode(stateAbbreviation: "CA")
-        XCTAssertTrue(postcode.contains(/^900\d{2}$/))
-    }
-
-    func testPostCodeWithWrongStateAbbreviation() {
-        let postcode = location.postcode(stateAbbreviation: "TE")
-        XCTAssertTrue(postcode.isEmpty)
     }
 
     func testTimeZone() {
@@ -74,13 +64,13 @@ final class LocationGeneratorTests: XCTestCase {
         XCTAssertEqual(cityPrefix, "North")
     }
 
-    func testStateAbbreviation() {
-        let stateAbbreviation = location.stateAbbreviation()
+    func testAbbreviatedState() {
+        let stateAbbreviation = location.state(abbreviated: true)
         XCTAssertEqual(stateAbbreviation, "CA")
     }
 
     func testState() {
-        let state = location.state()
+        let state = location.state(abbreviated: false)
         XCTAssertEqual(state, "California")
     }
 

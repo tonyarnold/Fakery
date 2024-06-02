@@ -28,9 +28,6 @@
     "postcode": [
       "#####-####"
     ],
-    "postcode_by_state": {
-      "CA": "900##"
-    },
     "state": [
       "California"
     ],
