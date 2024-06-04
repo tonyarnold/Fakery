@@ -4,7 +4,8 @@ This is a Swift port of [Faker](https://fakerjs.dev) that generates massive amou
 
 Are you still bothered with meaningless randomly character strings? Just relax and leave this job to **Mockery**. It's useful in all the cases when you need to use some dummy data for testing, population of database during development, etc.
 
-**NOTE**: Generated data is pretty realistic, supports a range of locales, but returned values are not guaranteed to be unique.
+> [!NOTE] 
+> The generated data is pretty realistic, and supports a range of locales, but the returned values are not guaranteed to be unique.
 
 ## Table of Contents
 
