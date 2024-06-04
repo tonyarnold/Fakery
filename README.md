@@ -25,7 +25,6 @@ Are you still bothered with meaningless randomly character strings? Just relax a
   * [Team](#team)
   * [Bank](#bank)
 * [Installation](#installation)
-* [Contributing](#contributing)
 * [Author](#author)
 * [License](#license)
 
