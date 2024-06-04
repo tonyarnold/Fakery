@@ -196,7 +196,7 @@ mockery.bank.bban() //=> ABNA0136468471
 **Mockery** is available through [Swift Package Manager](https://www.swift.org/documentation/package-manager/). To install using Swift Package Manager, add this to the `dependencies:` section in your Package.swift file:
 
 ```swift
-.package(url: "https://github.com/tonyarnold/mockery.git", .branch("main"))
+.package(url: "https://github.com/tonyarnold/mockery.git", branch: "main")
 ```
 
 ## Author
